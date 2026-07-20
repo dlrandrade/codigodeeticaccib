@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Propostas de Capa | Código de Ética CCIB</title>
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+:root{--azul:#0033A0;--laranja:#CC5200;--verde:#005C2E;--azul-esc:#001F63}
+@page{size:A4 portrait;margin:0}
+*{box-sizing:border-box}
+body{margin:0;background:#dcdcdc;font-family:'Plus Jakarta Sans',sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.capa{width:210mm;height:297mm;position:relative;overflow:hidden;margin:24px auto;background:#fff;box-shadow:0 0 30px rgba(0,0,0,.25);page-break-after:always}
+@media print{body{background:#fff}.capa{margin:0;box-shadow:none}}
+
+/* ---------- A · MINIMALISTA ---------- */
+.a{background:#FBFAF7}
+.a .chakra-bg{position:absolute;right:-70mm;top:52mm;width:200mm;height:200mm;opacity:.07}
+.a .inner{position:absolute;left:26mm;right:26mm;top:52mm;z-index:2}
+.a .bar{width:74px;height:8px;background:linear-gradient(90deg,#FF8200 0 50%,#009A44 50% 100%);margin-bottom:16mm}
+.a h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:74pt;line-height:.86;letter-spacing:-3px;color:var(--azul);margin:0}
+.a h1 em{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;letter-spacing:-1px}
+.a .rule{width:44mm;height:2px;background:var(--laranja);margin:14mm 0 8mm}
+.a h2{font-family:'Space Grotesk',sans-serif;font-size:11.5pt;font-weight:600;letter-spacing:3.4px;text-transform:uppercase;color:#5A6B84;margin:0;line-height:1.7}
+.a .foot{position:absolute;left:26mm;bottom:26mm;z-index:2}
+.a .foot img{max-width:196px;display:block}
+
+/* ---------- B · PREENCHIDA (MOSAICO) ---------- */
+.b .grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr)}
+.b .grid img{width:100%;height:100%;object-fit:cover;display:block}
+.b .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,31,99,.45) 0%,rgba(0,31,99,.12) 32%,rgba(0,31,99,.12) 62%,rgba(0,31,99,.48) 100%)}
+.b .band{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);background:#fff;padding:13mm 22mm 11mm;text-align:center;box-shadow:0 18px 50px rgba(0,0,0,.3)}
+.b .band .bar{width:74px;height:8px;background:linear-gradient(90deg,#FF8200 0 50%,#009A44 50% 100%);margin:0 auto 9mm}
+.b h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:46pt;line-height:.92;letter-spacing:-2px;color:var(--azul);margin:0}
+.b h1 em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600}
+.b h2{font-family:'Space Grotesk',sans-serif;font-size:10pt;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#5A6B84;margin:8mm 0 0}
+.b .band img{max-width:176px;display:block;margin:1mm auto -6mm}
+
+/* ---------- C · CHAKRA (PROPOSTA AUTORAL) ---------- */
+.c{background:radial-gradient(120% 90% at 22% 8%,#0A47C4 0%,var(--azul) 42%,var(--azul-esc) 100%)}
+.c .grain{position:absolute;inset:0;opacity:.5;background:
+  radial-gradient(circle at 18% 12%,rgba(255,255,255,.10) 0,transparent 42%),
+  radial-gradient(circle at 82% 88%,rgba(0,0,0,.28) 0,transparent 55%)}
+.c .inner{position:absolute;left:24mm;right:24mm;top:34mm;z-index:4}
+.c .bar{width:74px;height:8px;background:linear-gradient(90deg,#FF8200 0 50%,#009A44 50% 100%);margin-bottom:13mm}
+.c h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:63pt;line-height:.88;letter-spacing:-2.6px;color:#fff;margin:0}
+.c h1 em{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;letter-spacing:-1px;color:#FFD9B0}
+.c h2{font-family:'Space Grotesk',sans-serif;font-size:10.5pt;font-weight:600;letter-spacing:3.2px;text-transform:uppercase;color:rgba(255,255,255,.72);margin:11mm 0 0}
+.c .wheel{position:absolute;left:50%;top:173mm;transform:translate(-50%,-50%);width:134mm;height:134mm;z-index:2}
+.c .wheel .spokes{position:absolute;inset:0;opacity:.5}
+.c .photo{position:absolute;left:50%;top:173mm;transform:translate(-50%,-50%);width:96mm;height:96mm;border-radius:50%;overflow:hidden;z-index:3;box-shadow:0 26px 70px rgba(0,0,0,.5)}
+.c .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.c .photo::after{content:'';position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);background:linear-gradient(180deg,rgba(0,51,160,.12),rgba(0,31,99,.42))}
+.c .foot{position:absolute;left:0;right:0;bottom:6mm;text-align:center;z-index:4}
+.c .foot img{max-width:168px;filter:brightness(0) invert(1)}
+</style>
+</head>
+<body>
+
+<!-- ============ CAPA A · MINIMALISTA ============ -->
+<div class="capa a">
+  <svg class="chakra-bg" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="95" fill="none" stroke="#0033A0" stroke-width="1.6"/>
+    <circle cx="100" cy="100" r="86" fill="none" stroke="#0033A0" stroke-width="0.8"/>
+    <circle cx="100" cy="100" r="11" fill="#0033A0"/>
+    <g stroke="#0033A0" stroke-width="1.1">
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(0 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(15 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(30 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(45 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(60 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(75 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(90 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(105 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(120 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(135 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(150 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(165 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(180 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(195 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(210 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(225 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(240 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(255 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(270 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(285 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(300 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(315 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(330 100 100)"/>
+      <line x1="100" y1="18" x2="100" y2="89" transform="rotate(345 100 100)"/>
+    </g>
+  </svg>
+  <div class="inner">
+    <div class="bar"></div>
+    <h1>Código<em>de Ética</em></h1>
+    <div class="rule"></div>
+    <h2>Câmara de Comércio<br>Índia Brasil</h2>
+  </div>
+  <div class="foot"><img src="1.png" onerror="this.src='2.png'" alt="CCIB"></div>
+</div>
+
+<!-- ============ CAPA B · PREENCHIDA ============ -->
+<div class="capa b">
+  <div class="grid">
+    <img src="capa.jpg" alt=""><img src="himalaia.jpg" alt=""><img src="jodhpur.jpg" alt="">
+    <img src="belo_horizonte.jpg" alt=""><img src="golden_temple.jpg" alt=""><img src="mumbai.jpg" alt="">
+    <img src="rajasthan.jpg" alt=""><img src="hawa_mahal.jpg" alt=""><img src="varanasi.jpg" alt="">
+    <img src="mumbai_skyline.jpg" alt=""><img src="sp_noturna.jpg" alt=""><img src="recife.jpg" alt="">
+  </div>
+  <div class="veil"></div>
+  <div class="band">
+    <div class="bar"></div>
+    <h1>Código<br><em>de Ética</em></h1>
+    <h2>Câmara de Comércio Índia Brasil</h2>
+    <img src="1.png" onerror="this.src='2.png'" alt="CCIB">
+  </div>
+</div>
+
+<!-- ============ CAPA C · CHAKRA ============ -->
+<div class="capa c">
+  <div class="grain"></div>
+  <svg class="wheel" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="97" fill="none" stroke="#fff" stroke-width="0.7" opacity=".45"/>
+    <circle cx="100" cy="100" r="88" fill="none" stroke="#fff" stroke-width="1.4" opacity=".55"/>
+    <g class="spokes" stroke="#fff" stroke-width="0.9">
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(0 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(15 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(30 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(45 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(60 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(75 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(90 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(105 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(120 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(135 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(150 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(165 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(180 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(195 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(210 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(225 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(240 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(255 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(270 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(285 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(300 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(315 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(330 100 100)"/>
+      <line x1="100" y1="12" x2="100" y2="74" transform="rotate(345 100 100)"/>
+    </g>
+  </svg>
+  <div class="photo"><img src="capa.jpg" alt="Portão da Índia, Nova Délhi"></div>
+  <div class="inner">
+    <div class="bar"></div>
+    <h1>Código<em>de Ética</em></h1>
+    <h2>Câmara de Comércio Índia Brasil</h2>
+  </div>
+  <div class="foot"><img src="1.png" onerror="this.src='2.png'" alt="CCIB"></div>
+</div>
+
+</body>
+</html>
