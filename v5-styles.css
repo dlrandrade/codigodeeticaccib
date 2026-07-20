@@ -1,0 +1,258 @@
+:root{--azul:#0033A0;--laranja:#CC5200;--verde:#005C2E;--cinza:#F4F6F9;--texto:#1E293B}
+@page { size: A4 portrait; margin: 22mm 0; }
+@page fullbleed { margin: 0; }
+*{box-sizing:border-box}
+body{margin:0;padding:0;background:#e0e0e0;font-family:'Plus Jakarta Sans',sans-serif;color:var(--texto);font-size:10.5pt;line-height:1.7;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.doc{background:#fff;width:210mm;margin:20px auto;box-shadow:0 0 25px rgba(0,0,0,.2)}
+@media print{
+    * { box-shadow: none !important; }
+    body{background:#fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; margin: 0 !important; padding: 0 !important;}
+    .doc{margin:0;box-shadow:none;width:100%;}
+    .pg { padding-top: 0; padding-bottom: 0; page-break-before: always; }
+    .cover, .backcover, .mosaic-page, .img-caption, .img-full, .quote-page {
+        page: fullbleed;
+        width: 100vw !important; 
+        height: 100vh !important; 
+        margin: 0 !important; 
+        padding: 0 !important; 
+        border: none !important;
+    }
+    p, li, .story, .callout, .sec, .wq, .sq, .img-left, .img-right, .img-left-wrap, .img-right-wrap, .author, h1, h2, h3, .mvv, .ch {
+        page-break-inside: avoid;
+    }
+    h1, h2, h3, .ch, .sec {
+        page-break-after: avoid;
+    }
+}
+
+/* CAPA */
+.cover{width:210mm;height:297mm;position:relative;background:var(--azul);page-break-after:always;overflow:hidden}
+.cover img.bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.55;mix-blend-mode:multiply}
+.cover .grad{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(0,51,160,.05),rgba(0,51,160,1) 88%)}
+.cover .inner{position:absolute;bottom:0;left:0;width:100%;padding:20mm 25mm 30mm}
+.cover .bar{width:90px;height:7px;background:linear-gradient(to right,var(--laranja) 50%,var(--verde) 50%);margin-bottom:8mm}
+.cover h1{font-family:'Space Grotesk',sans-serif;font-size:82pt;font-weight:700;color:#fff;text-transform:uppercase;line-height:.88;margin:0 0 6mm;letter-spacing:-2.5px}
+.cover h1 em{color:var(--laranja);font-style:normal}
+.cover h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:15pt;font-weight:600;color:#FFFFFF;letter-spacing:4px;text-transform:uppercase;margin:0}
+.cover .logo{max-width:260px;filter:brightness(0) invert(1);margin-top:18mm}
+
+/* CONTRACAPA */
+.backcover{width:210mm;height:297mm;background:var(--cinza);position:relative;display:flex;align-items:center;justify-content:center}
+.backcover img.bg{position:absolute;width:100%;height:100%;object-fit:cover;opacity:.12}
+.backcover .logo{max-width:240px;position:relative;z-index:2}
+
+/* CONTEUDO */
+.pg{padding:22mm 28mm;position:relative}
+.clearfix::after{content:"";clear:both;display:table}
+
+/* TÍTULOS DE CAPÍTULO - variados */
+.ch{display:flex;align-items:center;margin-bottom:12mm;gap:12px}
+.ch h1{font-family:'Space Grotesk',sans-serif;font-size:28pt;font-weight:700;color:var(--azul);text-transform:uppercase;margin:0;letter-spacing:-.5px}
+.ch .ico{width:28px;height:28px;flex-shrink:0}
+
+/* SEÇÃO - com barra de cor no topo */
+.sec{margin-top:12mm;margin-bottom:5mm;padding-top:4mm;border-top:3px solid var(--laranja)}
+.sec.green{border-top-color:var(--verde)}
+.sec.blue{border-top-color:var(--azul)}
+.sec h2{font-family:'Space Grotesk',sans-serif;font-size:15pt;font-weight:700;color:var(--azul);margin:0 0 2mm;text-transform:uppercase}
+
+/* SUBSECTION */
+.sub h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5pt;font-weight:700;color:var(--laranja);margin:8mm 0 3mm;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.sub h3 .num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--laranja);color:#fff;font-size:11pt;font-weight:700;flex-shrink:0}
+
+/* 1. DROP CAP */
+.dropcap::first-letter{float:left;font-family:'Cormorant Garamond',serif;font-size:64pt;line-height:.78;font-weight:700;color:var(--azul);margin-right:4mm;margin-top:2mm}
+
+/* 2. OPENER - frase grande de abertura sem box */
+.opener{font-size:15pt;font-weight:600;color:var(--azul);line-height:1.45;margin-bottom:8mm}
+
+/* 3. WIDE-QUOTE - citação larga centralizada */
+.wq{font-family:'Cormorant Garamond',serif;font-size:22pt;font-weight:600;font-style:italic;color:var(--laranja);text-align:center;margin:14mm 15mm;line-height:1.35;border-top:1px solid var(--cinza);border-bottom:1px solid var(--cinza);padding:8mm 0;position:relative}
+
+/* 4. SIDE-QUOTE - citação lateral flutuante */
+.sq{float:right;width:55mm;margin:0 0 6mm 8mm;padding:6mm;background:var(--cinza);border-right:4px solid var(--verde);font-family:'Cormorant Garamond',serif;font-size:14pt;font-style:italic;color:var(--verde);line-height:1.4}
+
+/* 5. CALLOUT BOX - destaque horizontal com ícone */
+.callout{display:flex;gap:5mm;align-items:flex-start;background:rgba(0,51,160,.04);padding:6mm 8mm;border-radius:6px;margin:8mm 0}
+.callout .mark{width:40px;height:40px;border-radius:50%;background:var(--azul);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18pt;flex-shrink:0;font-family:'Cormorant Garamond',serif;font-weight:700}
+.callout .mark.or{background:var(--laranja)}
+.callout .mark.gr{background:var(--verde)}
+.callout-body{flex:1}
+.callout-body p{margin-bottom:3mm}
+.callout-body p:last-child{margin-bottom:0}
+
+/* 6. STORY BOX - narrativa */
+.story{background:var(--cinza);padding:10mm;margin:10mm 0;position:relative;border-radius:0 0 8px 8px;border-top:4px solid var(--verde)}
+.story p{font-size:10pt;margin-bottom:3mm}
+.story p:last-child{margin-bottom:0}
+
+/* 7. TINTED SECTION */
+.tint{background:var(--cinza);padding:8mm 10mm;margin:8mm -10mm;border-radius:8px}
+
+/* 8. ORNAMENTAL DIVIDER */
+.divider{text-align:center;margin:10mm 0;color:var(--laranja);font-size:14pt;letter-spacing:8px}
+
+/* 9. TWO COLUMN */
+.cols2{column-count:2;column-gap:8mm;margin:6mm 0}
+
+/* 10. HIGHLIGHT LINE */
+.hl{background:linear-gradient(to right,rgba(255,130,0,.15),transparent);padding:2mm 4mm;border-radius:3px;display:inline}
+
+/* 11. ACCENT TEXT */
+.sanskrit{font-family:'Plus Jakarta Sans',sans-serif;font-style:italic;color:var(--laranja);font-weight:700;font-size:105%}
+strong{color:var(--azul);font-weight:700}
+em{color:var(--verde);font-family:'Plus Jakarta Sans',sans-serif;font-style:italic;font-size:105%;font-weight:600}
+
+/* DIALOGUE BOX */
+.dialogue {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11.5pt;
+    font-style: italic;
+    color: var(--azul);
+    margin: 4mm 0 6mm 6mm;
+    border-left: 3px solid var(--laranja);
+    padding-left: 5mm;
+    line-height: 1.5;
+}
+
+/* IMAGES */
+.img-left{float:left;width:62mm;height:62mm;object-fit:cover;border-radius:6px;margin:2mm 12mm 6mm 0;box-shadow:0 5px 15px rgba(0,0,0,.1)}
+.img-right{float:right;width:62mm;height:62mm;object-fit:cover;border-radius:6px;margin:2mm 0 6mm 12mm;box-shadow:0 5px 15px rgba(0,0,0,.1)}
+.img-left-wrap { float:left; width:62mm; margin:2mm 12mm 6mm 0; }
+.img-left-wrap img { width:100%; height:62mm; object-fit:cover; border-radius:6px; box-shadow:0 5px 15px rgba(0,0,0,.1); }
+.img-right-wrap { float:right; width:62mm; margin:2mm 0 6mm 12mm; }
+.img-right-wrap img { width:100%; height:62mm; object-fit:cover; border-radius:6px; box-shadow:0 5px 15px rgba(0,0,0,.1); }
+.img-full{width:210mm;height:297mm;object-fit:cover;page-break-before:always;page-break-after:always;display:block;margin:0;padding:0;position:relative;z-index:10;background:#fff}
+
+/* UTILITIES */
+.keep-together { page-break-inside: avoid; }
+.compromisso-card {
+    background: #fff;
+    border-left: 4px solid var(--verde);
+    padding: 6mm 8mm;
+    margin-bottom: 8mm;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border-radius: 0 8px 8px 0;
+    page-break-inside: avoid;
+}
+.compromisso-card .sub h3 { margin-top: 0; }
+.compromisso-card p:last-child { margin-bottom: 0; }
+
+/* MVV */
+.mvv{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin:10mm 0 14mm}
+.mvv .card{padding:8mm;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+.mvv .card.m{background:#fff;border:2px solid var(--azul)}
+.mvv .card.v{background:#fff;border:2px solid var(--verde)}
+.mvv .card.val{grid-column:1/-1;background:none;display:flex;flex-wrap:wrap;gap:4mm;align-items:center;border:none}
+.mvv .card h3{font-family:'Space Grotesk',sans-serif;font-size:18pt;margin:0 0 3mm;text-transform:uppercase}
+.mvv .card.m h3{color:var(--azul)}
+.mvv .card.v h3{color:var(--verde)}
+.mvv .card.val h3{color:var(--laranja);width:100%}
+.tag{background:#fff;color:var(--azul);padding:3mm 7mm;border-radius:30px;font-weight:700;font-size:11pt;box-shadow:0 2px 8px rgba(0,0,0,.05);border:1px solid rgba(0,51,160,.08)}
+
+/* AUTHOR */
+.author{display:flex;align-items:center;justify-content:flex-end;margin-top:14mm;border-top:2px solid var(--cinza);padding-top:10mm;text-align:right}
+.author-text{margin-right:6mm}
+.author-name{font-size:16pt;font-weight:700;color:var(--laranja);margin:0;font-family:'Space Grotesk',sans-serif}
+.author-role{font-size:10pt;color:var(--texto);margin:0}
+.author-photo{width:35mm;height:35mm;border-radius:50%;object-fit:cover;border:4px solid var(--verde);box-shadow:0 8px 20px rgba(0,132,61,.2)}
+
+/* LISTS */
+ul.bl{list-style:none;padding:0;margin-bottom:6mm}
+ul.bl li{position:relative;padding-left:8mm;margin-bottom:4mm;text-align:justify}
+ul.bl li::before{content:'■';color:var(--laranja);position:absolute;left:0;top:0;font-size:11pt}
+
+/* LINK BOX */
+.linkbox{background:rgba(0,51,160,.04);padding:6mm 8mm;border-left:4px solid var(--azul);margin:8mm 0}
+.linkbox a{color:var(--laranja);text-decoration:none;font-weight:700}
+
+/* SUMÁRIO */
+.toc-item{display:flex;align-items:baseline;font-family:'Space Grotesk',sans-serif;color:var(--azul);font-size:13pt;font-weight:600;text-transform:uppercase;margin-bottom:3mm}
+.toc-item::after{content:'';flex-grow:1;border-bottom:2px dotted #ccc;margin:0 4mm;position:relative;top:-3px}
+.toc-item span:last-child{color:var(--laranja);font-weight:700}
+
+p{margin-bottom:6mm;text-align:justify}
+
+/* GEOMETRIC ACCENTS */
+.geo{position:absolute;z-index:0;opacity:.06;border-radius:50%}
+.geo1{width:100px;height:100px;background:var(--verde);top:25mm;right:25mm}
+.geo2{width:140px;height:140px;background:var(--laranja);bottom:30mm;left:-30px;border-radius:0;transform:rotate(45deg)}
+.geo3{width:180px;height:180px;background:var(--azul);top:40mm;left:-40px}
+.geo4{width:90px;height:90px;background:var(--laranja);top:60mm;right:20mm;border-radius:50%}
+.geo5{width:200px;height:200px;border:3px solid var(--verde);top:30mm;right:-50px;background:none;opacity:.08}
+.geo6{width:120px;height:120px;background:var(--azul);bottom:50mm;right:30mm;border-radius:0;transform:rotate(30deg);opacity:.04}
+
+/* MOSAIC GRID */
+.mosaic-page{width:210mm;height:297mm;display:grid;page-break-before:always;page-break-after:always;overflow:hidden;position:relative;z-index:10;background:#fff}
+.mosaic-page.g4{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:0}
+.mosaic-page.g6{grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:0}
+.mosaic-page.g2h{grid-template-columns:1fr;grid-template-rows:1fr 1fr;gap:0}
+.mosaic-page img{width:100%;height:100%;object-fit:cover;display:block}
+.mosaic-page .span2{grid-column:span 2}
+.mosaic-page .span-r2{grid-row:span 2}
+
+/* DECORATIVE MANDALA / PAISLEY */
+.deco-mandala{position:absolute;z-index:0;opacity:.04;pointer-events:none}
+.deco-mandala svg{width:100%;height:100%}
+.deco-mandala.tl{top:-20mm;left:-20mm;width:160px;height:160px}
+.deco-mandala.br{bottom:-20mm;right:-20mm;width:200px;height:200px}
+.deco-mandala.tr{top:20mm;right:-10mm;width:140px;height:140px}
+
+/* INLINE STRIP - faixa decorativa entre seções */
+.strip{width:100%;height:4px;background:linear-gradient(to right,var(--laranja),var(--verde),var(--azul));margin:10mm 0;border-radius:2px;opacity:.5}
+
+/* OM / LOTUS watermark */
+.watermark{position:absolute;font-size:200pt;color:var(--laranja);opacity:.03;z-index:0;font-family:'Cormorant Garamond',serif;pointer-events:none}
+.watermark.center{top:50%;left:50%;transform:translate(-50%,-50%)}
+.watermark.bl{bottom:10mm;left:10mm}
+.watermark.tr{top:10mm;right:20mm}
+
+/* IMAGE CAPTIONS */
+.img-caption{position:relative;page-break-before:always;page-break-after:always;width:210mm;height:297mm;margin:0;padding:0;overflow:hidden;z-index:10;background:#fff}
+.img-caption img{width:100%;height:100%;object-fit:cover;display:block}
+.img-caption figcaption{position:absolute;bottom:0;left:0;width:100%;padding:8mm 12mm;background:linear-gradient(to top,rgba(0,0,0,.65),transparent);color:rgba(255,255,255,.8);font-size:8.5pt;font-style:italic;letter-spacing:.5px}
+
+/* BACKCOVER ENHANCED */
+.backcover{width:210mm;height:297mm;background:var(--azul);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;page-break-before:always;overflow:hidden}
+.backcover img.bg{position:absolute;width:100%;height:100%;object-fit:cover;opacity:.15}
+.backcover .logo-big{max-width:320px;position:relative;z-index:2;margin-bottom:10mm;filter:brightness(0) invert(1)}
+.backcover .url{position:relative;z-index:2;font-family:'Space Grotesk',sans-serif;font-size:14pt;color:#fff;letter-spacing:3px;font-weight:600}
+.backcover .bar-bc{width:90px;height:5px;background:linear-gradient(to right,var(--laranja) 50%,var(--verde) 50%);margin-bottom:12mm;position:relative;z-index:2}
+
+/* SMALL INLINE CAPTION */
+.sm-cap{display:block;font-size:7.5pt;color:#999;font-style:italic;margin-top:1mm;text-align:left}
+
+/* PLACEHOLDER (conteúdo a inserir) */
+.placeholder{border:2px dashed rgba(0,51,160,.25);border-radius:8px;padding:10mm;background:rgba(0,51,160,.02);margin:6mm 0}
+.placeholder-tall{min-height:120mm;display:flex;flex-direction:column;justify-content:center}
+.placeholder .placeholder-tag{font-family:'Space Grotesk',sans-serif;font-size:11pt;font-weight:700;color:var(--laranja);text-transform:uppercase;letter-spacing:1px;margin-bottom:4mm;text-align:center}
+.placeholder p{text-align:center;color:#94A3B8}
+
+/* PÁGINA-FRASE (full-page, frase de impacto) */
+.quote-page{width:210mm;height:297mm;page-break-before:always;page-break-after:always;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(--azul)}
+.quote-page.q-or{background:var(--laranja)}
+.quote-page.q-gr{background:var(--verde)}
+.quote-page.q-bl{background:var(--azul)}
+.quote-page .qp-mark{position:absolute;top:30mm;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-size:160pt;line-height:1;color:rgba(255,255,255,.12)}
+.qp-inner{max-width:155mm;text-align:center;padding:0 18mm;position:relative;z-index:2}
+.qp-bar{width:90px;height:7px;background:rgba(255,255,255,.75);margin:0 auto 12mm}
+.qp-text{font-family:'Cormorant Garamond',serif;font-size:34pt;font-weight:600;font-style:italic;color:#fff;line-height:1.32;margin:0;text-align:center}
+
+/* PÁGINA RESERVADA EM BRANCO (CV + prefácio Dr. Siqueira Castro) */
+.reserved-blank{min-height:190mm;display:flex;align-items:flex-start;justify-content:center;padding-top:10mm}
+.reserved-blank .placeholder-tag{font-family:'Space Grotesk',sans-serif;font-size:9.5pt;font-weight:700;color:#B8C2D0;text-transform:uppercase;letter-spacing:1.5px;text-align:center;margin:0}
+
+/* AGRADECIMENTOS — bloco de nomes */
+.thanks-block{margin-top:14mm;padding-top:8mm;border-top:2px solid rgba(0,51,160,.12);text-align:center}
+.thanks-label{font-family:'Space Grotesk',sans-serif;font-size:10pt;font-weight:700;color:var(--laranja);text-transform:uppercase;letter-spacing:2px;margin:0 0 4mm}
+.thanks-names{font-family:'Space Grotesk',sans-serif;font-size:15pt;font-weight:600;color:var(--azul);margin:0}
+
+/* PÁGINA DE AUTORES */
+.authors-list{margin-top:24mm;display:flex;flex-direction:column;align-items:center;gap:11mm}
+.authors-item{text-align:center;position:relative;padding-bottom:8mm}
+.authors-item::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:34px;height:3px;background:var(--laranja);opacity:.55}
+.authors-item:last-child::after{display:none}
+.authors-name{font-family:'Space Grotesk',sans-serif;font-size:19pt;font-weight:700;color:var(--azul);margin:0;letter-spacing:-.3px}
+.authors-org{margin-top:4mm}
+.authors-org .authors-name{font-size:14pt;font-weight:600;color:var(--verde);text-transform:uppercase;letter-spacing:1.5px}
