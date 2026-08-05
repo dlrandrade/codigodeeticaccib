@@ -25,16 +25,21 @@ body{margin:0;padding:0;background:#e0e0e0;font-family:'Plus Jakarta Sans',sans-
     }
 }
 
-/* CAPA */
-.cover{width:210mm;height:297mm;position:relative;background:var(--azul);page-break-after:always;overflow:hidden}
-.cover img.bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.55;mix-blend-mode:multiply}
-.cover .grad{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(0,51,160,.05),rgba(0,51,160,1) 88%)}
-.cover .inner{position:absolute;bottom:0;left:0;width:100%;padding:20mm 25mm 30mm}
-.cover .bar{width:90px;height:7px;background:linear-gradient(to right,var(--laranja) 50%,var(--verde) 50%);margin-bottom:8mm}
-.cover h1{font-family:'Space Grotesk',sans-serif;font-size:82pt;font-weight:700;color:#fff;text-transform:uppercase;line-height:.88;margin:0 0 6mm;letter-spacing:-2.5px}
-.cover h1 em{color:var(--laranja);font-style:normal}
-.cover h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:15pt;font-weight:600;color:#FFFFFF;letter-spacing:4px;text-transform:uppercase;margin:0}
-.cover .logo{max-width:260px;filter:brightness(0) invert(1);margin-top:18mm}
+/* CAPA CONFORME REFERÊNCIA KONARK WHEEL */
+.cover{width:210mm;height:297mm;position:relative;background:#18120e;page-break-after:always;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;padding:16mm 20mm 16mm;box-sizing:border-box}
+.cover img.bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:1}
+.cover .veil{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg, rgba(15,12,10,0.82) 0%, rgba(15,12,10,0.18) 22%, rgba(15,12,10,0.18) 72%, rgba(15,12,10,0.88) 100%)}
+.cover .top-content{position:relative;z-index:3;width:100%;display:flex;flex-direction:column;align-items:center}
+.cover .flag-accent{width:38px;height:4.5px;background:linear-gradient(90deg,#FF8200 0% 50%,#00843D 50% 100%);border-radius:2px;margin-bottom:6mm}
+.cover h1{font-family:'Space Grotesk',sans-serif;font-size:60pt;font-weight:700;color:#FFFFFF;margin:0;line-height:0.92;letter-spacing:-1.5px;text-transform:none}
+.cover h1 em{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;color:#DFB56C;font-size:56pt;margin-top:1mm;letter-spacing:0;text-transform:none}
+.cover h2{font-family:'Space Grotesk',sans-serif;font-size:9.5pt;font-weight:600;color:rgba(255,255,255,0.92);letter-spacing:3.5px;text-transform:uppercase;margin:6mm 0 0}
+.cover .bottom-content{position:relative;z-index:3;width:100%;display:flex;flex-direction:column;align-items:center}
+.cover .bottom-tagline{font-family:'Cormorant Garamond',serif;font-size:11.5pt;font-weight:600;color:#DFB56C;letter-spacing:2px;text-transform:uppercase;line-height:1.55;margin-bottom:3.5mm}
+.cover .bottom-tagline em{color:#DFB56C;font-style:italic;font-family:'Cormorant Garamond',serif}
+.cover .flourish{display:flex;align-items:center;justify-content:center;gap:8px;color:#DFB56C;font-size:8pt;margin-bottom:6mm}
+.cover .flourish::before, .cover .flourish::after{content:'';width:28px;height:1px;background:#DFB56C;opacity:0.7}
+.cover .logo{max-width:185px;filter:brightness(0) invert(1);margin-top:0}
 
 /* CONTRACAPA */
 .backcover{width:210mm;height:297mm;background:var(--cinza);position:relative;display:flex;align-items:center;justify-content:center}
